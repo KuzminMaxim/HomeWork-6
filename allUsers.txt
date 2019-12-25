@@ -1,0 +1,4 @@
+Alexander/Alexandrovich/Maltsev/aaa@aaa.com/SomeCompany/70/555.0
+Alexander/Grigorievich/Fluxman/fff@fff.com/SomeCompany/60/555.0
+Valery/Vladimirovich/Matrosov/mmm@mmm.com/SomeCompany/50/555.0
+Maxim/Ilyich/Kuzmin/kuzminqwe75@gmail.com/SomeCompany/21/21.0

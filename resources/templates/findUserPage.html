@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find user</title>
+</head>
+<body>
+<a th:href="@{/}">Return</a>
+<form th:action="@{/findUser}" th:object="${userModel}" method="POST">
+    <table>
+        <tr>
+            <td>
+                <label for="Nickname" class="nameLabel">
+                    Enter user first name
+                </label>
+                <input type="text" id="Nickname" placeholder="first name" th:field="*{firstName}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="lastName" class="nameLabel">
+                    Enter user last name
+                </label>
+                <input type="text" id="lastName" placeholder="last name" th:field="*{lastName}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" class="btn" value="Find" />
+            </td>
+        </tr>
+    </table>
+</form>
+<br>
+<table th:if="${foundUser != null}" border="1">
+    <tr>
+        <td>First name</td>
+        <td>Middle name</td>
+        <td>Last name</td>
+        <td>Email</td>
+        <td>Place of work</td>
+        <td>Age</td>
+        <td>Salary</td>
+    </tr>
+    <tr>
+        <td><span th:utext="${foundUser.firstName}">...</span></td>
+        <td><span th:utext="${foundUser.middleName}">...</span></td>
+        <td><span th:utext="${foundUser.lastName}">...</span></td>
+        <td><span th:utext="${foundUser.email}">...</span></td>
+        <td><span th:utext="${foundUser.placeOfWork}">...</span></td>
+        <td><span th:utext="${foundUser.age}">...</span></td>
+        <td><span th:utext="${foundUser.salary}">...</span></td>
+    </tr>
+</table>
+<span th:if="${userAgent} != null" th:utext="${userAgent}"></span>
+<br>
+<span th:if="${currentTime} != null" th:utext="${currentTime}"></span>
+<br>
+<span th:if="${userNotFound} != null" th:utext="${userNotFound}"></span>
+</body>
+</html>
